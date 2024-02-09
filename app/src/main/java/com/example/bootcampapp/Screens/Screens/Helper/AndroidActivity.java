@@ -69,11 +69,28 @@ public class AndroidActivity extends AppCompatActivity {
                         if(currentValidation[index]){
                             score++;
                         }
+                        index++;
+                        if(index <= questionArray.length-1){
+
+                            question.setText(questionArray[index]);
+
+                            btn1.setText(btn1_text[index]);
+                            btn2.setText(btn2_text[index]);
+                            btn3.setText(btn3_text[index]);
+                            btn4.setText(btn4_text[index]);
+                        }else {
+                            Toast.makeText(AndroidActivity.this, "Score : "+ score, Toast.LENGTH_SHORT).show();
+
+                        }
                     }
                 }
             }
         };
 
+        btn1.setOnClickListener(onClickListener);
+        btn2.setOnClickListener(onClickListener);
+        btn3.setOnClickListener(onClickListener);
+        btn4.setOnClickListener(onClickListener);
 
     }
 }
